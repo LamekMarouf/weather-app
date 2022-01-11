@@ -91,9 +91,16 @@
 .locationInfo .locationCityTitle {
     display: flex; 
     justify-content: space-between;
-    width: 30%;
+    width: 25%;
     font-size: 24px;
     font-weight: 600;
+}
+
+.locationInfo .locationCityTitle img {
+    height: 30px;
+    width: 30px;
+    background-color: rgb(213, 213, 213);
+    border-radius: 50%;
 }
 
 .weeklyForecastGrid {
@@ -116,6 +123,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    border-radius: 5px;
 }
 
 .forecastCard .forecastDateBold {
