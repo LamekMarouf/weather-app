@@ -9,43 +9,93 @@
 </head>
 
 <body>
+    
     <section class="title">Weather Dashboard</section>
 
-    <section class="searchContainer">
-        <div class="citySearchBox">
-             <div id="searchTitle">Search for a City:</div>
-             <input type="text" placeholder="City" id="searchBar">
-            <button type="submit"  id="searchButton">Search</button>
-        </div>
+    <section class="gridContainer">
+        <section class="searchContainer">
+            <div class="citySearchBox">
+                <div id="searchTitle">Search for a City:</div>
+                <input type="text" placeholder="City" id="searchBar">
+                <button type="submit"  id="searchButton">Search</button>
+            </div>
 
-        <section class="cityButtons">
-            <button id="austin">Austin</button>
-            <button id="chicago">Chicago</button>
-            <button id="newYork">New York</button>
-            <button id="orlando">Orlando</button>
-            <button id="sanFrancisco">San Francisco</button>
-            <button id="seattle">Seattle</button>
-            <button id="denver">Denver</button>
-            <button id="atlanta">Atlanta</button>
+            <section class="cityButtons">
+                <button id="austin">Austin</button>
+                <button id="chicago">Chicago</button>
+                <button id="newYork">New York</button>
+                <button id="orlando">Orlando</button>
+                <button id="sanFrancisco">San Francisco</button>
+                <button id="seattle">Seattle</button>
+                <button id="denver">Denver</button>
+                <button id="atlanta">Atlanta</button>
 
+            </section>
+
+            <section class="searchHistory"></section>
         </section>
 
-        <section class="searchHistory"></section>
+        <section class="gridContainerRows">
+            <section class="locationInfo">
+                <div class="locationCityTitle">
+                    <div id="cityName">Jamaica</div>
+                    <div id="Date">(30/30/2001)</div>
+                    <div id="icon">Icon</div>
+                </div>
+
+                    <div id="temperature">Temperature:</div>
+                    <div id="wind">Wind:</div>
+                    <div id="humidity">Humidity:</div>
+                    <div id="uvIndex">UV Index:</div>
+            </section>
+
+            <section class="weeklyForecast">
+                <div id="forecastTitle">5-Day Forecast:</div>
+                <section class="weeklyForecastGrid">
+                    <div class="forecastCard" id="dayOneCard">
+                        <div id="forecastDateOne" class="forecastDateBold">1/31/2002</div>
+                        <div id="forecastIconOne">Icon</div>
+                        <div id="forecastTempOne">Temp:</div>
+                        <div id="forecastWindOne">Wind:</div>
+                        <div id="forecastHumidityOne">Humidity:</div>
+                    </div>
+
+                    <div class="forecastCard" id="dayTwoCard">
+                        <div id="forecastDateTwo" class="forecastDateBold">1/31/2002</div>
+                        <div id="forecastIconTwo">Icon</div>
+                        <div id="forecastTempTwo">Temp:</div>
+                        <div id="forecastWindTwo">Wind:</div>
+                        <div id="forecastHumidityTwo">Humidity:</div>
+                    </div>
+
+                    <div class="forecastCard" id="dayThreeCard">
+                        <div id="forecastDateThree" class="forecastDateBold">1/31/2002</div>
+                        <div id="forecastIconThree">Icon</div>
+                        <div id="forecastTempThree">Temp:</div>
+                        <div id="forecastWindThree">Wind:</div>
+                        <div id="forecastHumidityThree">Humidity:</div>
+                    </div>
+
+                    <div class="forecastCard" id="dayFourCard">
+                        <div id="forecastDateFour" class="forecastDateBold">1/31/2002</div>
+                        <div id="forecastIconFour">Icon</div>
+                        <div id="forecastTempFour">Temp:</div>
+                        <div id="forecastWindFour">Wind:</div>
+                        <div id="forecastHumidityFour">Humidity:</div>
+                    </div>
+
+                    <div class="forecastCard" id="dayFiveCard">
+                        <div id="forecastDateFive" class="forecastDateBold">1/31/2002</div>
+                        <div id="forecastIconFive">Icon</div>
+                        <div id="forecastTempFive">Temp:</div>
+                        <div id="forecastWindFive">Wind:</div>
+                        <div id="forecastHumidityFive">Humidity:</div>
+                    </div>
+
+        </section>
     </section>
 
-    <section class="locationInfo">
-        <div class="locationCityTitle">
-            <div id="cityName">Jamaica</div>
-            <div id="Date">30/30/2001</div>
-            <div id="icon">Icon</div>
-        </div>
-
-            <div id="temperature">36 degrees</div>
-            <div id="wind">7 MPH</div>
-            <div id="humidity">40%</div>
-            <div id="uvIndex">0.47</div>
     </section>
-
 
     <script src="script.js"></script>
 </body>
