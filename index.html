@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>The Weather</title>
+</head>
+
+<body>
+    <section class="title">Weather Dashboard</section>
+
+    <section class="searchContainer">
+        <div class="citySearchBox">
+             <div id="searchTitle">Search for a City:</div>
+             <input type="text" placeholder="City" id="searchBar">
+            <button type="submit"  id="searchButton">Search</button>
+        </div>
+
+        <section class="cityButtons">
+            <button id="austin">Austin</button>
+            <button id="chicago">Chicago</button>
+            <button id="newYork">New York</button>
+            <button id="orlando">Orlando</button>
+            <button id="sanFrancisco">San Francisco</button>
+            <button id="seattle">Seattle</button>
+            <button id="denver">Denver</button>
+            <button id="atlanta">Atlanta</button>
+
+        </section>
+
+        <section class="searchHistory"></section>
+    </section>
+
+    <section class="locationInfo">
+        <div class="locationCityTitle">
+            <div id="cityName">Jamaica</div>
+            <div id="Date">30/30/2001</div>
+            <div id="icon">Icon</div>
+        </div>
+
+            <div id="temperature">36 degrees</div>
+            <div id="wind">7 MPH</div>
+            <div id="humidity">40%</div>
+            <div id="uvIndex">0.47</div>
+    </section>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
