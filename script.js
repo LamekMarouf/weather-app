@@ -35,6 +35,9 @@ document.getElementById("searchBar").addEventListener("keyup", function(event) {
     }
 })
 
+
+
+// Day One
 let dailyWeatherOne = {
     "apiKey": "f029df65dad8c980dd6e8213893e1f7e",
     fetchDailyWeatherOne: function (dailyCityOne) {
@@ -46,10 +49,10 @@ let dailyWeatherOne = {
         .then((data) => this.displayDailyWeatherOne(data));
     },
     displayDailyWeatherOne: function(data) {
-        const { icon } = data.list[9].weather[0];
-        const { temp, humidity } = data.list[9].main;
-        const { speed } = data.list[9].wind;
-        const { dt_txt } = data.list[9];
+        const { icon } = data.list[15].weather[0];
+        const { temp, humidity } = data.list[15].main;
+        const { speed } = data.list[15].wind;
+        const { dt_txt } = data.list[15];
         document.querySelector(".iconDayOne").src = "https://openweathermap.org/img/wn/" + icon + ".png";
         document.getElementById("forecastTempOne").innerText = "Temp: " + temp + "°C";
         document.getElementById("forecastHumidityOne").innerText = "Humidity: " + humidity + "%";
@@ -72,6 +75,8 @@ document.getElementById("searchBar").addEventListener("keyup", function(event) {
     }
 })
 
+
+// Day Two
 let dailyWeatherTwo = {
     "apiKey": "f029df65dad8c980dd6e8213893e1f7e",
     fetchDailyWeatherTwo: function (dailyCityTwo) {
@@ -83,10 +88,10 @@ let dailyWeatherTwo = {
         .then((data) => this.displayDailyWeatherTwo(data));
     },
     displayDailyWeatherTwo: function(data) {
-        const { icon } = data.list[9].weather[0];
-        const { temp, humidity } = data.list[9].main;
-        const { speed } = data.list[9].wind;
-        const { dt_txt } = data.list[9];
+        const { icon } = data.list[23].weather[0];
+        const { temp, humidity } = data.list[23].main;
+        const { speed } = data.list[23].wind;
+        const { dt_txt } = data.list[23];
         document.querySelector(".iconDayTwo").src = "https://openweathermap.org/img/wn/" + icon + ".png";
         document.getElementById("forecastTempTwo").innerText = "Temp: " + temp + "°C";
         document.getElementById("forecastHumidityTwo").innerText = "Humidity: " + humidity + "%";
@@ -109,6 +114,8 @@ document.getElementById("searchBar").addEventListener("keyup", function(event) {
     }
 })
 
+
+// Day Three
 let dailyWeatherThree = {
     "apiKey": "f029df65dad8c980dd6e8213893e1f7e",
     fetchDailyWeatherThree: function (dailyCityThree) {
@@ -120,10 +127,10 @@ let dailyWeatherThree = {
         .then((data) => this.displayDailyWeatherThree(data));
     },
     displayDailyWeatherThree: function(data) {
-        const { icon } = data.list[9].weather[0];
-        const { temp, humidity } = data.list[9].main;
-        const { speed } = data.list[9].wind;
-        const { dt_txt } = data.list[9];
+        const { icon } = data.list[31].weather[0];
+        const { temp, humidity } = data.list[31].main;
+        const { speed } = data.list[31].wind;
+        const { dt_txt } = data.list[31];
         document.querySelector(".iconDayThree").src = "https://openweathermap.org/img/wn/" + icon + ".png";
         document.getElementById("forecastTempThree").innerText = "Temp: " + temp + "°C";
         document.getElementById("forecastHumidityThree").innerText = "Humidity: " + humidity + "%";
@@ -146,6 +153,8 @@ document.getElementById("searchBar").addEventListener("keyup", function(event) {
     }
 })
 
+
+// Day Four
 let dailyWeatherFour = {
     "apiKey": "f029df65dad8c980dd6e8213893e1f7e",
     fetchDailyWeatherFour: function (dailyCityFour) {
@@ -157,10 +166,10 @@ let dailyWeatherFour = {
         .then((data) => this.displayDailyWeatherFour(data));
     },
     displayDailyWeatherFour: function(data) {
-        const { icon } = data.list[9].weather[0];
-        const { temp, humidity } = data.list[9].main;
-        const { speed } = data.list[9].wind;
-        const { dt_txt } = data.list[9];
+        const { icon } = data.list[39].weather[0];
+        const { temp, humidity } = data.list[39].main;
+        const { speed } = data.list[39].wind;
+        const { dt_txt } = data.list[39];
         document.querySelector(".iconDayFour").src = "https://openweathermap.org/img/wn/" + icon + ".png";
         document.getElementById("forecastTempFour").innerText = "Temp: " + temp + "°C";
         document.getElementById("forecastHumidityFour").innerText = "Humidity: " + humidity + "%";
@@ -183,6 +192,8 @@ document.getElementById("searchBar").addEventListener("keyup", function(event) {
     }
 })
 
+
+// Day Five
 let dailyWeatherFive = {
     "apiKey": "f029df65dad8c980dd6e8213893e1f7e",
     fetchDailyWeatherFive: function (dailyCityFive) {
