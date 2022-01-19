@@ -129,3 +129,8 @@
 .forecastCard .forecastDateBold {
     font-weight: 600;
 }
+
+.iconDayOne {
+    height: 60px;
+    width: 60px;
+}
