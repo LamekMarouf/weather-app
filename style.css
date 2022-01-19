@@ -130,7 +130,11 @@
     font-weight: 600;
 }
 
-.iconDayOne {
+.iconDayOne,
+.iconDayTwo,
+.iconDayThree,
+.iconDayFour,
+.iconDayFive {
     height: 60px;
     width: 60px;
 }
