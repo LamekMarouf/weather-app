@@ -33,7 +33,84 @@ document.getElementById("searchBar").addEventListener("keyup", function(event) {
     if (event.key == "Enter") {
         weather.search();
     }
+
 })
+
+// Button onClick Events
+function austinSearch() {
+    document.getElementById("searchBar").value = "Austin";
+    weather.search();
+    dailyWeatherOne.search();
+    dailyWeatherTwo.search();
+    dailyWeatherThree.search();
+    dailyWeatherFour.search();
+
+}
+
+function chicagoSearch() {
+    document.getElementById("searchBar").value = "Chicago";
+    weather.search();
+    dailyWeatherOne.search();
+    dailyWeatherTwo.search();
+    dailyWeatherThree.search();
+    dailyWeatherFour.search();
+}
+
+function newYorkSearch() {
+    document.getElementById("searchBar").value = "New York";
+    weather.search();
+    dailyWeatherOne.search();
+    dailyWeatherTwo.search();
+    dailyWeatherThree.search();
+    dailyWeatherFour.search();
+}
+
+function orlandoSearch() {
+    document.getElementById("searchBar").value = "Orlando";
+    weather.search();
+    dailyWeatherOne.search();
+    dailyWeatherTwo.search();
+    dailyWeatherThree.search();
+    dailyWeatherFour.search();
+}
+
+function sanFranciscoSearch() {
+    document.getElementById("searchBar").value = "San Francisco";
+    weather.search();
+    dailyWeatherOne.search();
+    dailyWeatherTwo.search();
+    dailyWeatherThree.search();
+    dailyWeatherFour.search();
+}
+
+function seattleSearch() {
+    document.getElementById("searchBar").value = "Seattle";
+    weather.search();
+    dailyWeatherOne.search();
+    dailyWeatherTwo.search();
+    dailyWeatherThree.search();
+    dailyWeatherFour.search();
+}
+
+function denverSearch() {
+    document.getElementById("searchBar").value = "Denver";
+    weather.search();
+    dailyWeatherOne.search();
+    dailyWeatherTwo.search();
+    dailyWeatherThree.search();
+    dailyWeatherFour.search();
+}
+
+function atlantaSearch() {
+    document.getElementById("searchBar").value = "Atlanta";
+    weather.search();
+    dailyWeatherOne.search();
+    dailyWeatherTwo.search();
+    dailyWeatherThree.search();
+    dailyWeatherFour.search();
+}
+
+
 
 
 
@@ -196,16 +273,33 @@ document.getElementById("searchBar").addEventListener("keyup", function(event) {
 // Day Five
 let dailyWeatherFive = {
     "apiKey": "f029df65dad8c980dd6e8213893e1f7e",
-    fetchDailyWeatherFive: function (dailyCityFive) {
-        fetch("https://api.openweathermap.org/data/2.5/forecast?q="
+    fetchLonLat: function (dailyCityFive) {
+        fetch("http://api.openweathermap.org/geo/1.0/direct?q=" 
         + dailyCityFive 
-        + "&units=metric&appid=" 
+        + "&limit=5&appid=" 
+        + this.apiKey
+        ).then((response) => response.json())
+        .then((data) => this.displayLonLat(data));
+    },
+
+    displayLonLat: function (data) {
+        const { lat } = data[1];
+        const { lon } = data[1];
+        const latFive = lat;
+        const lonFive = lon;
+    },
+
+    fetchDailyWeatherFive: function () {
+        fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" 
+        + latFive 
+        + "&lon=" + lonFive
+        + "&appid=" 
         + this.apiKey
         ).then((response) => response.json())
         .then((data) => this.displayDailyWeatherFive(data));
     },
     displayDailyWeatherFive: function(data) {
-        const { icon } = data.list[9].weather[0];
+        const { icon } = data.list.weather[0];
         const { temp, humidity } = data.list[9].main;
         const { speed } = data.list[9].wind;
         const { dt_txt } = data.list[9];
@@ -220,6 +314,7 @@ let dailyWeatherFive = {
         this.fetchDailyWeatherFive(document.getElementById("searchBar").value);
     }
 };
+
 
 document.getElementById("searchButton").addEventListener("click", function() {
     dailyWeatherFive.search();

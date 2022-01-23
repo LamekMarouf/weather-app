@@ -21,14 +21,14 @@
             </div>
 
             <section class="cityButtons">
-                <button id="austin">Austin</button>
-                <button id="chicago">Chicago</button>
-                <button id="newYork">New York</button>
-                <button id="orlando">Orlando</button>
-                <button id="sanFrancisco">San Francisco</button>
-                <button id="seattle">Seattle</button>
-                <button id="denver">Denver</button>
-                <button id="atlanta">Atlanta</button>
+                <button onclick="austinSearch()">Austin</button>
+                <button onclick="chicagoSearch()">Chicago</button>
+                <button onclick="newYorkSearch()">New York</button>
+                <button onclick="orlandoSearch()">Orlando</button>
+                <button onclick="sanFranciscoSearch()">San Francisco</button>
+                <button onclick="seattleSearch()">Seattle</button>
+                <button onclick="denverSearch()">Denver</button>
+                <button onclick="atlantaSearch()">Atlanta</button>
 
             </section>
 
@@ -37,15 +37,15 @@
         <section class="gridContainerRows">
             <section class="locationInfo">
                 <div class="locationCityTitle">
-                    <div id="cityName">Jamaica</div>
-                    <div id="Date">(30/30/2001)</div>
+                    <div id="cityName">City</div>
+                    <div id="Date"></div>
                     <img src="" alt="" class="iconMain">
                 </div>
 
-                    <div id="temperature">Temperature: 29°</div>
-                    <div id="wind">Wind: 6.2km/h</div>
-                    <div id="humidity">Humidity: 60%</div>
-                    <div id="uvIndex">UV Index: 0.47</div>
+                    <div id="temperature">Temperature: ____</div>
+                    <div id="wind">Wind: ____km/h</div>
+                    <div id="humidity">Humidity: ____%</div>
+                    <div id="uvIndex">UV Index: ____</div>
             </section>
 
             <section class="weeklyForecast">
@@ -54,41 +54,41 @@
                     <div class="forecastCard" id="dayOneCard">
                         <div id="forecastDateOne" class="forecastDateBold">1/31/2002</div>
                         <img src="" alt="" class="iconDayOne">
-                        <div id="forecastTempOne">Temp: 29°</div>
-                        <div id="forecastWindOne">Wind: 6.2km/h</div>
-                        <div id="forecastHumidityOne">Humidity: 60%</div>
+                        <div id="forecastTempOne">Temp: ____°</div>
+                        <div id="forecastWindOne">Wind: ____km/h</div>
+                        <div id="forecastHumidityOne">Humidity: ____%</div>
                     </div>
 
                     <div class="forecastCard" id="dayTwoCard">
                         <div id="forecastDateTwo" class="forecastDateBold">1/31/2002</div>
                         <img src="" alt="" class="iconDayTwo">
-                        <div id="forecastTempTwo">Temp: 29°</div>
-                        <div id="forecastWindTwo">Wind: 6.2km/h</div>
-                        <div id="forecastHumidityTwo">Humidity: 60%</div>
+                        <div id="forecastTempTwo">Temp: ____°</div>
+                        <div id="forecastWindTwo">Wind: ____km/h</div>
+                        <div id="forecastHumidityTwo">Humidity: ____%</div>
                     </div>
 
                     <div class="forecastCard" id="dayThreeCard">
                         <div id="forecastDateThree" class="forecastDateBold">1/31/2002</div>
                         <img src="" alt="" class="iconDayThree">
-                        <div id="forecastTempThree">Temp: 29°</div>
-                        <div id="forecastWindThree">Wind: 6.2km/h</div>
-                        <div id="forecastHumidityThree">Humidity: 60%</div>
+                        <div id="forecastTempThree">Temp: ____°</div>
+                        <div id="forecastWindThree">Wind: ____/h</div>
+                        <div id="forecastHumidityThree">Humidity: ____%</div>
                     </div>
 
                     <div class="forecastCard" id="dayFourCard">
                         <div id="forecastDateFour" class="forecastDateBold">1/31/2002</div>
                         <img src="" alt="" class="iconDayFour">
-                        <div id="forecastTempFour">Temp: 29°</div>
-                        <div id="forecastWindFour">Wind: 6.2km/h</div>
-                        <div id="forecastHumidityFour">Humidity: 60%</div>
+                        <div id="forecastTempFour">Temp: ____°</div>
+                        <div id="forecastWindFour">Wind: ____km/h</div>
+                        <div id="forecastHumidityFour">Humidity: ____%</div>
                     </div>
 
                     <div class="forecastCard" id="dayFiveCard">
                         <div id="forecastDateFive" class="forecastDateBold">1/31/2002</div>
                         <img src="" alt="" class="iconDayFive">
-                        <div id="forecastTempFive">Temp: 29°</div>
-                        <div id="forecastWindFive">Wind: 6.2km/h</div>
-                        <div id="forecastHumidityFive">Humidity: 60%</div>
+                        <div id="forecastTempFive">Temp: ____°</div>
+                        <div id="forecastWindFive">Wind: ____km/h</div>
+                        <div id="forecastHumidityFive">Humidity: ____%</div>
                     </div>
 
         </section>
@@ -97,5 +97,6 @@
     </section>
 
     <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
 </body>
 </html>
