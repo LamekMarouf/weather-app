@@ -1,113 +1,172 @@
-let weather = {
+const currentDate = new Date().toLocaleDateString();
+document.getElementById("date").innerText = currentDate
+
+let dailyWeather = {
     "apiKey": "f029df65dad8c980dd6e8213893e1f7e",
-    fetchWeather: function (city) {
-        fetch("https://api.openweathermap.org/data/2.5/weather?q=" 
-        + city 
-        + "&units=metric&appid=" 
+    fetchLonLat: function (dailyCity) {
+        fetch("http://api.openweathermap.org/geo/1.0/direct?q=" 
+        + dailyCity 
+        + "&limit=5&appid=" 
         + this.apiKey
-        ).then((response) => response.json()) 
-        .then((data) => this.displayWeather(data));
+        ).then((response) => response.json())
+        .then((data) => this.displayLonLat(data));
     },
-    displayWeather: function(data) {
-        const { name } = data;
-        const { icon } = data.weather[0];
-        const { temp, humidity } = data.main;
-        const { speed } = data.wind;
+
+    displayLonLat: function (data) {
+        const { lat } = data[0];
+        const { lon } = data[0];
+        const { name } = data[0];
+        fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" 
+        + lat 
+        + "&lon=" + lon 
+        +"&units=metric"
+        + "&appid=" 
+        + this.apiKey
+        ).then((response) => response.json())
+        .then((data) => this.displayDailyWeather(data));
         document.getElementById("cityName").innerText = name;
-        document.getElementById("wind").innerText = "Wind: " + speed + "km/h";
+        console.log(lat, lon, uvi);
+    },
+    displayDailyWeather: function(data) {
+        const { icon } = data.daily[0].weather[0];
+        const { day } = data.daily[0].temp;
+        const { wind_speed } = data.daily[4];
+        const { humidity } = data.daily[4];
+        const { uvi } = data.daily[4];
+        document.getElementById("iconMain").src = "https://openweathermap.org/img/wn/" + icon + ".png";
+        document.getElementById("temperature").innerText = "Temp: " + day + "°C";
         document.getElementById("humidity").innerText = "Humidity: " + humidity + "%";
-        document.getElementById("temperature").innerText = "Temperature: " + temp + "°C";
-        document.querySelector(".iconMain").src = "https://openweathermap.org/img/wn/" + icon + ".png";
+        document.getElementById("wind").innerText = "Wind: " + wind_speed + "km/h";
+        document.getElementById("uvIndexNumber").innerText = uvi;
+        if (uvi <= 2) {
+            document.getElementById("uvIndexNumber").classList.add("uvLow");
+            document.getElementById("uvIndexNumber").classList.remove("uvMedium")
+            document.getElementById("uvIndexNumber").classList.remove("uvHigh")
+            document.getElementById("uvIndexNumber").classList.remove("uvVeryHigh")
+            document.getElementById("uvIndexNumber").classList.remove("uvExtreme")
+        } else if (uvi > 2 && uvi <= 5) {
+            document.getElementById("uvIndexNumber").classList.remove("uvLow");
+            document.getElementById("uvIndexNumber").classList.add("uvMedium")
+            document.getElementById("uvIndexNumber").classList.remove("uvHigh")
+            document.getElementById("uvIndexNumber").classList.remove("uvVeryHigh")
+            document.getElementById("uvIndexNumber").classList.remove("uvExtreme")
+        } else if (uvi > 5 && uvi <= 8) {
+            document.getElementById("uvIndexNumber").classList.remove("uvLow");
+            document.getElementById("uvIndexNumber").classList.remove("uvMedium")
+            document.getElementById("uvIndexNumber").classList.add("uvHigh")
+            document.getElementById("uvIndexNumber").classList.remove("uvVeryHigh")
+            document.getElementById("uvIndexNumber").classList.remove("uvExtreme")
+        } else if (uvi > 8 && uvi <= 10) {
+            document.getElementById("uvIndexNumber").classList.remove("uvLow");
+            document.getElementById("uvIndexNumber").classList.remove("uvMedium")
+            document.getElementById("uvIndexNumber").classList.remove("uvHigh")
+            document.getElementById("uvIndexNumber").classList.add("uvVeryHigh")
+            document.getElementById("uvIndexNumber").classList.remove("uvExtreme")
+        } else {
+            document.getElementById("uvIndexNumber").classList.remove("uvLow");
+            document.getElementById("uvIndexNumber").classList.remove("uvMedium")
+            document.getElementById("uvIndexNumber").classList.remove("uvHigh")
+            document.getElementById("uvIndexNumber").classList.remove("uvVeryHigh")
+            document.getElementById("uvIndexNumber").classList.add("uvExtreme")
+        }
     },
 
     search: function () {
-        this.fetchWeather(document.getElementById("searchBar").value);
+        this.fetchLonLat(document.getElementById("searchBar").value);
     }
 };
 
+
+
+
 document.getElementById("searchButton").addEventListener("click", function() {
-    weather.search();
+    dailyWeather.search();
 })
 
 document.getElementById("searchBar").addEventListener("keyup", function(event) {
     if (event.key == "Enter") {
-        weather.search();
+        dailyWeather.search();
     }
-
 })
-
 // Button onClick Events
 function austinSearch() {
     document.getElementById("searchBar").value = "Austin";
-    weather.search();
+    dailyWeather.search();
     dailyWeatherOne.search();
     dailyWeatherTwo.search();
     dailyWeatherThree.search();
     dailyWeatherFour.search();
-
+    dailyWeatherFive.search();
 }
 
 function chicagoSearch() {
     document.getElementById("searchBar").value = "Chicago";
-    weather.search();
+    dailyWeather.search();
     dailyWeatherOne.search();
     dailyWeatherTwo.search();
     dailyWeatherThree.search();
     dailyWeatherFour.search();
+    dailyWeatherFive.search();
 }
 
 function newYorkSearch() {
     document.getElementById("searchBar").value = "New York";
-    weather.search();
+    dailyWeather.search();
     dailyWeatherOne.search();
     dailyWeatherTwo.search();
     dailyWeatherThree.search();
     dailyWeatherFour.search();
+    dailyWeatherFive.search();
 }
 
 function orlandoSearch() {
     document.getElementById("searchBar").value = "Orlando";
-    weather.search();
+    dailyWeather.search();
     dailyWeatherOne.search();
     dailyWeatherTwo.search();
     dailyWeatherThree.search();
     dailyWeatherFour.search();
+    dailyWeatherFive.search();
 }
 
 function sanFranciscoSearch() {
     document.getElementById("searchBar").value = "San Francisco";
-    weather.search();
+    dailyWeather.search();
     dailyWeatherOne.search();
     dailyWeatherTwo.search();
     dailyWeatherThree.search();
     dailyWeatherFour.search();
+    dailyWeatherFive.search();
 }
 
 function seattleSearch() {
     document.getElementById("searchBar").value = "Seattle";
-    weather.search();
+    dailyWeather.search();
     dailyWeatherOne.search();
     dailyWeatherTwo.search();
     dailyWeatherThree.search();
     dailyWeatherFour.search();
+    dailyWeatherFive.search();
 }
 
 function denverSearch() {
     document.getElementById("searchBar").value = "Denver";
-    weather.search();
+    dailyWeather.search();
     dailyWeatherOne.search();
     dailyWeatherTwo.search();
     dailyWeatherThree.search();
     dailyWeatherFour.search();
+    dailyWeatherFive.search();
 }
 
 function atlantaSearch() {
     document.getElementById("searchBar").value = "Atlanta";
-    weather.search();
+    dailyWeather.search();
     dailyWeatherOne.search();
     dailyWeatherTwo.search();
     dailyWeatherThree.search();
     dailyWeatherFour.search();
+    dailyWeatherFive.search();
 }
 
 
@@ -273,45 +332,41 @@ document.getElementById("searchBar").addEventListener("keyup", function(event) {
 // Day Five
 let dailyWeatherFive = {
     "apiKey": "f029df65dad8c980dd6e8213893e1f7e",
-    fetchLonLat: function (dailyCityFive) {
+    fetchLonLatFive: function (dailyCityFive) {
         fetch("http://api.openweathermap.org/geo/1.0/direct?q=" 
         + dailyCityFive 
         + "&limit=5&appid=" 
         + this.apiKey
         ).then((response) => response.json())
-        .then((data) => this.displayLonLat(data));
+        .then((data) => this.displayLonLatFive(data));
     },
 
-    displayLonLat: function (data) {
-        const { lat } = data[1];
-        const { lon } = data[1];
-        const latFive = lat;
-        const lonFive = lon;
-    },
-
-    fetchDailyWeatherFive: function () {
+    displayLonLatFive: function (data) {
+        const { lat } = data[0];
+        const { lon } = data[0];
         fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" 
-        + latFive 
-        + "&lon=" + lonFive
+        + lat 
+        + "&lon=" + lon 
+        +"&units=metric"
         + "&appid=" 
         + this.apiKey
         ).then((response) => response.json())
         .then((data) => this.displayDailyWeatherFive(data));
+        console.log(lat, lon);
     },
     displayDailyWeatherFive: function(data) {
-        const { icon } = data.list.weather[0];
-        const { temp, humidity } = data.list[9].main;
-        const { speed } = data.list[9].wind;
-        const { dt_txt } = data.list[9];
+        const { icon } = data.daily[4].weather[0];
+        const { day } = data.daily[4].temp;
+        const { wind_speed } = data.daily[4];
+        const { humidity } = data.daily[4];
         document.querySelector(".iconDayFive").src = "https://openweathermap.org/img/wn/" + icon + ".png";
-        document.getElementById("forecastTempFive").innerText = "Temp: " + temp + "°C";
+        document.getElementById("forecastTempFive").innerText = "Temp: " + day + "°C";
         document.getElementById("forecastHumidityFive").innerText = "Humidity: " + humidity + "%";
-        document.getElementById("forecastWindFive").innerText = "Wind: " + speed + "km/h";
-        document.getElementById("forecastDateFive").innerText = dt_txt;
+        document.getElementById("forecastWindFive").innerText = "Wind: " + wind_speed + "km/h";
     },
 
     search: function () {
-        this.fetchDailyWeatherFive(document.getElementById("searchBar").value);
+        this.fetchLonLatFive(document.getElementById("searchBar").value);
     }
 };
 
@@ -325,6 +380,4 @@ document.getElementById("searchBar").addEventListener("keyup", function(event) {
         dailyWeatherFive.search();
     }
 })
-
-
 

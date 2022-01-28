@@ -79,6 +79,12 @@
     cursor: pointer;
 }
 
+.cityButtons .buttons:hover {
+    background-color: rgb(105, 151, 221);
+    transition: ease-in .3s;
+    color: white;
+}
+
 .locationInfo {
     border: 2px solid black;
     margin: 20px 10px;
@@ -137,4 +143,35 @@
 .iconDayFive {
     height: 60px;
     width: 60px;
+}
+
+.uvBox {
+    display: flex;
+}
+
+#uvIndexNumber {
+    border-radius: 2px;
+    padding: 2px;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.uvLow {
+    background-color: rgba(0, 217, 255, 0.789);
+}
+
+.uvMedium {
+    background-color: rgba(0, 169, 34, 0.782);
+}
+
+.uvHigh {
+    background-color: rgba(251, 255, 0, 0.837);
+}
+
+.uvVeryHigh {
+    background-color: rgba(206, 82, 0, 0.864);
+}
+
+.uvExtreme {
+    background-color: rgb(255, 0, 0);
 }
