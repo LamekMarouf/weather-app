@@ -6,6 +6,8 @@ This is a weather app that displays the current weather for a city you want to k
 
 ## Link for my project
 
-
+https://lamekmarouf.github.io/weather-app/
 
 ## Screenshot of my project
+
+![weatherApp](https://user-images.githubusercontent.com/89329958/151647361-18809808-d0bf-485a-9633-4354a96bc801.jpg)
