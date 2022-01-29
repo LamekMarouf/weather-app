@@ -1,5 +1,39 @@
-const currentDate = new Date().toLocaleDateString();
-document.getElementById("date").innerText = currentDate
+const currentDate = new Date(new Date().getTime());
+const day = currentDate.getDate();
+const month = currentDate.getMonth() + 1;
+const year = currentDate.getFullYear();
+document.getElementById("date").innerText = day + "/" + month + "/" + year
+
+const tomorrowsDate = new Date(new Date().getTime() + 24 * 60 * 60 * 1000);
+const tomorrowDay = tomorrowsDate.getDate();
+const tomorrowMonth = tomorrowsDate.getMonth() + 1;
+const tomorrowYear = tomorrowsDate.getFullYear();
+document.getElementById("forecastDateOne").innerText = tomorrowDay + "/" + tomorrowMonth + "/" + tomorrowYear
+
+const twoDaysDate = new Date(new Date().getTime() + 48 * 60 * 60 * 1000);
+const twoDaysDay = twoDaysDate.getDate();
+const twoDaysMonth = twoDaysDate.getMonth() + 1;
+const twoDaysYear = twoDaysDate.getFullYear();
+document.getElementById("forecastDateTwo").innerText = twoDaysDay + "/" + twoDaysMonth + "/" + twoDaysYear;
+
+const threeDaysDate = new Date(new Date().getTime() + 72 * 60 * 60 * 1000);
+const threeDaysDay = threeDaysDate.getDate();
+const threeDaysMonth = threeDaysDate.getMonth() + 1;
+const threeDaysYear = threeDaysDate.getFullYear();
+document.getElementById("forecastDateThree").innerText = threeDaysDay + "/" + threeDaysMonth + "/" + threeDaysYear
+
+const fourDaysDate = new Date(new Date().getTime() + 96 * 60 * 60 * 1000);
+const fourDaysDay = fourDaysDate.getDate();
+const fourDaysMonth = fourDaysDate.getMonth() + 1;
+const fourDaysYear = fourDaysDate.getFullYear();
+document.getElementById("forecastDateFour").innerText = fourDaysDay + "/" + fourDaysMonth + "/" + fourDaysYear
+
+const fiveDaysDate = new Date(new Date().getTime() + 72 * 60 * 60 * 1000);
+const fiveDaysDay = fiveDaysDate.getDate();
+const fiveDaysMonth = fiveDaysDate.getMonth() + 1;
+const fiveDaysYear = fiveDaysDate.getFullYear();
+document.getElementById("forecastDateFive").innerText = fiveDaysDay + "/" + fiveDaysMonth + "/" + fiveDaysYear
+
 
 let dailyWeather = {
     "apiKey": "f029df65dad8c980dd6e8213893e1f7e",

@@ -154,6 +154,8 @@
     padding: 2px;
     font-size: 12px;
     margin-left: 5px;
+    width: 30px;
+    text-align: center;
 }
 
 .uvLow {
