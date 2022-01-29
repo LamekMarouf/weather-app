@@ -222,12 +222,10 @@ let dailyWeatherOne = {
         const { icon } = data.list[15].weather[0];
         const { temp, humidity } = data.list[15].main;
         const { speed } = data.list[15].wind;
-        const { dt_txt } = data.list[15];
         document.querySelector(".iconDayOne").src = "https://openweathermap.org/img/wn/" + icon + ".png";
         document.getElementById("forecastTempOne").innerText = "Temp: " + temp + "°C";
         document.getElementById("forecastHumidityOne").innerText = "Humidity: " + humidity + "%";
         document.getElementById("forecastWindOne").innerText = "Wind: " + speed + "km/h";
-        document.getElementById("forecastDateOne").innerText = dt_txt;
     },
 
     search: function () {
@@ -261,12 +259,10 @@ let dailyWeatherTwo = {
         const { icon } = data.list[23].weather[0];
         const { temp, humidity } = data.list[23].main;
         const { speed } = data.list[23].wind;
-        const { dt_txt } = data.list[23];
         document.querySelector(".iconDayTwo").src = "https://openweathermap.org/img/wn/" + icon + ".png";
         document.getElementById("forecastTempTwo").innerText = "Temp: " + temp + "°C";
         document.getElementById("forecastHumidityTwo").innerText = "Humidity: " + humidity + "%";
         document.getElementById("forecastWindTwo").innerText = "Wind: " + speed + "km/h";
-        document.getElementById("forecastDateTwo").innerText = dt_txt;
     },
 
     search: function () {
@@ -300,12 +296,10 @@ let dailyWeatherThree = {
         const { icon } = data.list[31].weather[0];
         const { temp, humidity } = data.list[31].main;
         const { speed } = data.list[31].wind;
-        const { dt_txt } = data.list[31];
         document.querySelector(".iconDayThree").src = "https://openweathermap.org/img/wn/" + icon + ".png";
         document.getElementById("forecastTempThree").innerText = "Temp: " + temp + "°C";
         document.getElementById("forecastHumidityThree").innerText = "Humidity: " + humidity + "%";
         document.getElementById("forecastWindThree").innerText = "Wind: " + speed + "km/h";
-        document.getElementById("forecastDateThree").innerText = dt_txt;
     },
 
     search: function () {
@@ -339,12 +333,10 @@ let dailyWeatherFour = {
         const { icon } = data.list[39].weather[0];
         const { temp, humidity } = data.list[39].main;
         const { speed } = data.list[39].wind;
-        const { dt_txt } = data.list[39];
         document.querySelector(".iconDayFour").src = "https://openweathermap.org/img/wn/" + icon + ".png";
         document.getElementById("forecastTempFour").innerText = "Temp: " + temp + "°C";
         document.getElementById("forecastHumidityFour").innerText = "Humidity: " + humidity + "%";
         document.getElementById("forecastWindFour").innerText = "Wind: " + speed + "km/h";
-        document.getElementById("forecastDateFour").innerText = dt_txt;
     },
 
     search: function () {
