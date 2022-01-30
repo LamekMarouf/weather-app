@@ -39,7 +39,7 @@ let dailyWeather = {
     "apiKey": "f029df65dad8c980dd6e8213893e1f7e",
     fetchLonLat: function (dailyCity) {
         fetch("http://api.openweathermap.org/geo/1.0/direct?q=" 
-        + dailyCity 
+        + dailyCity
         + "&limit=5&appid=" 
         + this.apiKey
         ).then((response) => response.json())
