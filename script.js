@@ -34,7 +34,6 @@ const fiveDaysMonth = fiveDaysDate.getMonth() + 1;
 const fiveDaysYear = fiveDaysDate.getFullYear();
 document.getElementById("forecastDateFive").innerText = fiveDaysDay + "/" + fiveDaysMonth + "/" + fiveDaysYear
 
-
 let dailyWeather = {
     "apiKey": "f029df65dad8c980dd6e8213893e1f7e",
     fetchLonLat: function (dailyCity) {
